@@ -7,14 +7,14 @@ import DesktopPage from './(desktop)';
 import MobilePage from './(mobile)';
 
 async function Page() {
-  const [session, profile] = await Promise.all([
+  const [session, _profile] = await Promise.all([
     getSession(),
     getUserProfile(),
     // getSubscription(),
   ]);
 
   console.log(session)
-  const user = session?.user;
+  // const user = session?.user;
 
   if (!session) {
     return redirect('/auth/signin');

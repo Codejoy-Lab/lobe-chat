@@ -10,8 +10,8 @@ import { useEffect, useState } from 'react';
 import { getURL } from '@/utils/url';
 
 export default function SignIn() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, _setEmail] = useState('');
+  const [password, _setPassword] = useState('');
   const router = useRouter();
   const supabase = createClientComponentClient<Database>();
 
@@ -67,11 +67,11 @@ export default function SignIn() {
       <button onClick={handleSignIn}>Sign in</button>
       <button onClick={handleSignOut}>Sign out</button> */}
       <Auth
-        supabaseClient={supabase}
         appearance={{ theme: ThemeSupa }}
+        magicLink={true}
         providers={[]}
         redirectTo={`${getURL()}auth/callback`}
-        magicLink={true}
+        supabaseClient={supabase}
       />
     </>
   );
