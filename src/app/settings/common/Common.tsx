@@ -1,5 +1,7 @@
 import { Form, type ItemGroup, SelectWithImg, SliderWithInput } from '@lobehub/ui';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { Form as AntForm, App, Button, Input, Select } from 'antd';
+import { Database } from 'database.types';
 import isEqual from 'fast-deep-equal';
 import { debounce } from 'lodash-es';
 import { AppWindow, Monitor, Moon, Palette, Sun } from 'lucide-react';
@@ -16,6 +18,7 @@ import { useSessionStore } from '@/store/session';
 import { switchLang } from '@/utils/switchLang';
 
 import { ThemeSwatchesNeutral, ThemeSwatchesPrimary } from '../features/ThemeSwatches';
+import { useRouter } from 'next/navigation';
 
 type SettingItemGroup = ItemGroup;
 
@@ -33,6 +36,8 @@ const Common = memo(() => {
   ]);
 
   const { message, modal } = App.useApp();
+  const router = useRouter();
+  
 
   const handleReset = useCallback(() => {
     modal.confirm({
@@ -60,6 +65,29 @@ const Common = memo(() => {
         clearSessions();
         resetPluginSettings();
         message.success(t('danger.clear.success'));
+      },
+      title: t('danger.clear.confirm'),
+    });
+  }, []);
+
+  const handleSignOut = useCallback(() => {
+    modal.confirm({
+      cancelText: t('cancel', { ns: 'common' }),
+      centered: true,
+      okButtonProps: {
+        danger: true,
+      },
+      okText: t('ok', { ns: 'common' }),
+      onOk: async () => {
+        const supabase = createClientComponentClient<Database>();
+        const { error } = await supabase.auth.signOut();
+        if (!error) {
+          message.success(t('danger.clear.success'));
+          router.push('/welcome');
+          router.refresh();
+        } else {
+          console.log(error);
+        }
       },
       title: t('danger.clear.confirm'),
     });
@@ -158,6 +186,16 @@ const Common = memo(() => {
       {
         children: (
           <Button danger onClick={handleClear} type="primary">
+            {t('danger.clear.action')}
+          </Button>
+        ),
+        desc: t('danger.clear.title'),
+        label: t('danger.clear.desc'),
+        minWidth: undefined,
+      },
+      {
+        children: (
+          <Button danger onClick={handleSignOut} type="primary">
             {t('danger.clear.action')}
           </Button>
         ),

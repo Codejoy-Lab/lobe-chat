@@ -26,7 +26,7 @@
     "build": "next build",
     "build:analyze": "ANALYZE=true next build",
     "build:docker": "DOCKER=true next build",
-    "dev": "next dev -p 3010",
+    "dev": "next dev -p 3000",
     "i18n": "npm run i18n:workflow && lobe-i18n",
     "i18n:workflow": "ts-node --project ./tsconfig.json scripts/i18nWorkflow/index.ts",
     "lint": "npm run lint:ts && npm run lint:style && npm run type-check && npm run lint:circular",
@@ -43,7 +43,8 @@
     "test": "vitest --passWithNoTests",
     "test:coverage": "vitest run --coverage --passWithNoTests",
     "test:update": "vitest -u",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "types": "supabase gen types typescript --project-id mcsifvoiflcqjqrkbdzf > database.types.ts"
   },
   "lint-staged": {
     "*.md": [
@@ -72,6 +73,10 @@
     "@lobehub/chat-plugin-sdk": "latest",
     "@lobehub/chat-plugins-gateway": "latest",
     "@lobehub/ui": "latest",
+    "@supabase/auth-helpers-nextjs": "^0.8.1",
+    "@supabase/auth-ui-react": "^0.4.6",
+    "@supabase/auth-ui-shared": "^0.1.8",
+    "@supabase/supabase-js": "^2.38.3",
     "@vercel/analytics": "^1",
     "ahooks": "^3",
     "ai": "^2",
@@ -156,6 +161,7 @@
     "semantic-release": "^21",
     "sharp": "^0.32.6",
     "stylelint": "^15",
+    "supabase": "^1.106.1",
     "ts-node": "^10",
     "typescript": "^5",
     "vitest": "latest"
