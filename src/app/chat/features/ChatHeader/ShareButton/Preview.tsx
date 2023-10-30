@@ -1,5 +1,5 @@
 import { SiOpenai } from '@icons-pack/react-simple-icons';
-import { Avatar, ChatHeaderTitle, Logo, Markdown, Tag } from '@lobehub/ui';
+import { Avatar, ChatHeaderTitle, Markdown, Tag } from '@lobehub/ui';
 import { Button, SegmentedProps } from 'antd';
 import dayjs from 'dayjs';
 import { domToJpeg, domToPng, domToSvg, domToWebp } from 'modern-screenshot';
@@ -12,6 +12,7 @@ import pkg from '@/../package.json';
 import { useSessionStore } from '@/store/session';
 import { agentSelectors } from '@/store/session/slices/agentConfig';
 import { sessionSelectors } from '@/store/session/slices/session/selectors';
+import Logo from '../../../../../components/Icons/logo';
 
 import PluginTag from '../../ChatHeader/PluginTag';
 import { useStyles } from './style';
@@ -137,7 +138,7 @@ const Preview = memo<PreviewProps>(({ withSystemRole, imageType, withBackground,
             <ChatList />
             {withFooter ? (
               <Flexbox align={'center'} className={styles.footer} gap={4}>
-                <Logo extra={'chat'} type={'combine'} />
+                <Logo />
                 <div className={styles.url}>{pkg.homepage}</div>
               </Flexbox>
             ) : (

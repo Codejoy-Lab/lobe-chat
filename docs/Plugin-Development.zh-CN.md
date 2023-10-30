@@ -1,11 +1,11 @@
-# LobeChat 插件开发
+# CoolAI 插件开发
 
 #### TOC
 
 - [插件构成](#插件构成)
 - [自定义插件流程](#自定义插件流程)
   - [**`1`** 创建并启动插件项目](#1-创建并启动插件项目)
-  - [**`2`** 在 LobeChat 角色设置中添加本地插件](#2-在-lobechat-角色设置中添加本地插件)
+  - [**`2`** 在 CoolAI 角色设置中添加本地插件](#2-在-lobechat-角色设置中添加本地插件)
   - [**`3`** 会话测试插件功能](#3-会话测试插件功能)
 - [本地插件开发](#本地插件开发)
   - [manifest](#manifest)
@@ -18,7 +18,7 @@
 
 ## 插件构成
 
-一个 LobeChat 的插件由以下几个部分组成：
+一个 CoolAI 的插件由以下几个部分组成：
 
 1. **插件索引**：用于展示插件的基本信息，包括插件名称、描述、作者、版本、插件描述清单的链接，官方的插件索引地址：[lobe-chat-plugins](https://github.com/lobehub/lobe-chat-plugins)。若想上架插件到官方插件市场，需要 [提交 PR](https://github.com/lobehub/lobe-chat-plugins/pulls) 到该仓库；
 2. **插件描述清单 (manifest)**：用于描述插件的功能实现，包含了插件的服务端描述、前端展示信息、版本号等。关于 manifest 的详细介绍，详见 [manifest][manifest-docs-url]；
@@ -30,7 +30,7 @@
 
 ## 自定义插件流程
 
-本节将会介绍如何在 LobeChat 中添加和使用一个自定义插件。
+本节将会介绍如何在 CoolAI 中添加和使用一个自定义插件。
 
 ### **`1`** 创建并启动插件项目
 
@@ -47,9 +47,9 @@ $ npm run dev
 
 ![](https://github-production-user-asset-6210df.s3.amazonaws.com/28616219/265259526-9ef25272-4312-429b-93bc-a95515727ed3.png)
 
-### **`2`** 在 LobeChat 角色设置中添加本地插件
+### **`2`** 在 CoolAI 角色设置中添加本地插件
 
-接下来进入到 LobeChat 中，创建一个新的助手，并进入它的会话设置页：
+接下来进入到 CoolAI 中，创建一个新的助手，并进入它的会话设置页：
 
 ![](https://github-production-user-asset-6210df.s3.amazonaws.com/28616219/265259643-1a9cc34a-76f3-4ccf-928b-129654670efd.png)
 
@@ -79,7 +79,7 @@ $ npm run dev
 
 ![](https://github-production-user-asset-6210df.s3.amazonaws.com/28616219/265260461-c22ae797-2809-464b-96fc-d0c020f4807b.png)
 
-当完成这些操作后，你已经了解了添加自定义插件，并在 LobeChat 中使用的基础流程。
+当完成这些操作后，你已经了解了添加自定义插件，并在 CoolAI 中使用的基础流程。
 
 <br/>
 
@@ -132,8 +132,8 @@ $ npm run dev
 
 1. `identifier`：这是插件的唯一标识符，用来区分不同的插件，这个字段需要全局唯一。
 2. `api`：这是一个数组，包含了插件的所有 API 接口信息。每个接口都包含了 url、name、description 和 parameters 字段，均为必填项。其中 `description` 和 `parameters` 两个字段，将会作为 [Function Call](https://sspai.com/post/81986) 的 `functions` 参数发送给 gpt， parameters 需要符合 [JSON Schema](https://json-schema.org/) 规范。 在这个例子中，api 接口名为 `recommendClothes` ，这个接口的功能是根据用户的心情和性别来推荐衣服。接口的参数包括用户的心情和性别，这两个参数都是必填项。
-3. `ui`：这个字段包含了插件的用户界面信息，指明了 LobeChat 从哪个地址加载插件的前端界面。由于 LobeChat 插件界面加载是基于 iframe 实现的，因此可以按需指定插件界面的高度、宽度。
-4. `gateway`：这个字段指定了 LobeChat 查询 api 接口的网关。LobeChat 默认的插件网关是云端服务，而自定义插件的请求需要发给本地启动的服务，远端调用本地地址，一般调用不通。gateway 字段解决了该问题。通过在 manifest 中指定 gateway，LobeChat 将会向该地址发送插件请求，本地的网关地址将会调度请求到本地的插件服务。发布到线上的插件可以不用指定该字段。
+3. `ui`：这个字段包含了插件的用户界面信息，指明了 CoolAI 从哪个地址加载插件的前端界面。由于 CoolAI 插件界面加载是基于 iframe 实现的，因此可以按需指定插件界面的高度、宽度。
+4. `gateway`：这个字段指定了 CoolAI 查询 api 接口的网关。CoolAI 默认的插件网关是云端服务，而自定义插件的请求需要发给本地启动的服务，远端调用本地地址，一般调用不通。gateway 字段解决了该问题。通过在 manifest 中指定 gateway，CoolAI 将会向该地址发送插件请求，本地的网关地址将会调度请求到本地的插件服务。发布到线上的插件可以不用指定该字段。
 5. `version`：这是插件的版本号，现阶段暂时没有作用；
 
 在实际开发中，你可以根据自己的需求，修改插件的描述清单，声明想要实现的功能。 关于 manifest 各个字段的完整介绍，参见：[manifest][manifest-docs-url]。
@@ -190,9 +190,9 @@ export default async (req: Request) => {
 
 #### Plugin Gateway
 
-由于 LobeChat 默认的插件网关是云端服务 `/api/plugins`，云端服务通过 manifest 上的 `api.url` 地址发送请求，以解决跨域问题。
+由于 CoolAI 默认的插件网关是云端服务 `/api/plugins`，云端服务通过 manifest 上的 `api.url` 地址发送请求，以解决跨域问题。
 
-针对自定义插件，插件请求需要发送给本地服务， 因此通过在 manifest 中指定网关 (<http://localhost:3400/api/gateway>)，LobeChat 将会直接请求该地址，然后只需要在该地址下创建对应的网关即可。
+针对自定义插件，插件请求需要发送给本地服务， 因此通过在 manifest 中指定网关 (<http://localhost:3400/api/gateway>)，CoolAI 将会直接请求该地址，然后只需要在该地址下创建对应的网关即可。
 
 ```ts
 import { createLobeChatPluginGateway } from '@lobehub/chat-plugins-gateway';
@@ -204,7 +204,7 @@ export const config = {
 export default async createLobeChatPluginGateway();
 ```
 
-[`@lobehub/chat-plugins-gateway`](https://github.com/lobehub/chat-plugins-gateway) 包含了 LobeChat 中插件网关的[实现](https://github.com/lobehub/lobe-chat/blob/main/src/pages/api/plugins.api.ts)，你可以直接使用该包创建网关，进而让 LobeChat 访问到本地的插件服务。
+[`@lobehub/chat-plugins-gateway`](https://github.com/lobehub/chat-plugins-gateway) 包含了 CoolAI 中插件网关的[实现](https://github.com/lobehub/lobe-chat/blob/main/src/pages/api/plugins.api.ts)，你可以直接使用该包创建网关，进而让 CoolAI 访问到本地的插件服务。
 
 ### 插件 UI 界面
 
@@ -218,13 +218,13 @@ export default async createLobeChatPluginGateway();
 
 #### 插件 UI 界面实现
 
-LobeChat 通过 `iframe` 实现插件 ui 的加载，使用 `postMessage` 实现主体与插件的通信。因此， 插件 UI 的实现方式与普通的网页开发一致，你可以使用任何你熟悉的前端框架与开发语言。
+CoolAI 通过 `iframe` 实现插件 ui 的加载，使用 `postMessage` 实现主体与插件的通信。因此， 插件 UI 的实现方式与普通的网页开发一致，你可以使用任何你熟悉的前端框架与开发语言。
 
 ![](https://github-production-user-asset-6210df.s3.amazonaws.com/28616219/265263653-4ea87abc-249a-49f3-a241-7ed93ddb1ddf.png)
 
 在我们提供的模板中使用了 React + Next.js + [antd](https://ant.design/) 作为前端界面框架，你可以在 [`src/pages/index.tsx`](https://github.com/lobehub/chat-plugin-template/blob/main/src/pages/index.tsx) 中找到用户界面的实现。
 
-其中关于插件通信，我们在 [`@lobehub/chat-plugin-sdk`](https://github.com/lobehub/chat-plugin-sdk) 提供了相关方法，用于简化插件与 LobeChat 的通信。你可以通过 `fetchPluginMessage` 方法主动向 LobeChat 获取当前消息的数据。关于该方法的详细介绍，参见：[fetchPluginMessage][fetch-plugin-message-url]。
+其中关于插件通信，我们在 [`@lobehub/chat-plugin-sdk`](https://github.com/lobehub/chat-plugin-sdk) 提供了相关方法，用于简化插件与 CoolAI 的通信。你可以通过 `fetchPluginMessage` 方法主动向 CoolAI 获取当前消息的数据。关于该方法的详细介绍，参见：[fetchPluginMessage][fetch-plugin-message-url]。
 
 ```tsx
 import { fetchPluginMessage } from '@lobehub/chat-plugin-sdk';
@@ -236,7 +236,7 @@ const Render = memo(() => {
   const [data, setData] = useState<ResponseData>();
 
   useEffect(() => {
-    // 从 LobeChat 获取当前插件的消息
+    // 从 CoolAI 获取当前插件的消息
     fetchPluginMessage().then((e: ResponseData) => {
       setData(e);
     });

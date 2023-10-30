@@ -1,6 +1,6 @@
-# LobeChat Environment Variables
+# CoolAI Environment Variables
 
-LobeChat provides additional configuration options during deployment, which can be set using environment variables
+CoolAI provides additional configuration options during deployment, which can be set using environment variables
 
 #### TOC
 
@@ -25,7 +25,7 @@ LobeChat provides additional configuration options during deployment, which can 
 ### `ACCESS_CODE`
 
 - Type: Optional
-- Description: Add a password to access the LobeChat service, the password should be 6 digits or letters
+- Description: Add a password to access the CoolAI service, the password should be 6 digits or letters
 - Default: -
 - Example: `awCT74` or `e3@09!`
 
@@ -81,7 +81,7 @@ If you need to use Azure OpenAI to provide model services, you can refer to the 
 ### `PLUGINS_INDEX_URL`
 
 - Type: Optional
-- Description: The index address of the LobeChat plugin market. If you have deployed the plugin market service yourself, you can use this variable to override the default plugin market address
+- Description: The index address of the CoolAI plugin market. If you have deployed the plugin market service yourself, you can use this variable to override the default plugin market address
 - Default: `https://chat-plugins.lobehub.com`
 
 <br/>
@@ -91,7 +91,7 @@ If you need to use Azure OpenAI to provide model services, you can refer to the 
 ### `AGENTS_INDEX_URL`
 
 - Type: Optional
-- Description: The index address of the LobeChat role market. If you have deployed the role market service yourself, you can use this variable to override the default plugin market address
+- Description: The index address of the CoolAI role market. If you have deployed the role market service yourself, you can use this variable to override the default plugin market address
 - Default: `https://chat-agents.lobehub.com`
 
 <br/>

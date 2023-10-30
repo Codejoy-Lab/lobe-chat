@@ -4,7 +4,7 @@
 [![][docker-size-shield]][docker-size-link]
 [![][docker-pulls-shield]][docker-pulls-link]
 
-We provide [Docker Images][docker-release-link] for you to deploy LobeChat service on your private device.
+We provide [Docker Images][docker-release-link] for you to deploy CoolAI service on your private device.
 
 ## Install Docker container environment
 
@@ -26,7 +26,7 @@ $ yum install docker
 
 ### `A` Command deployment (recommended)
 
-Use the following command to start LobeChat service with one click:
+Use the following command to start CoolAI service with one click:
 
 ```fish
 $ docker run -d -p 3210:3210 \
@@ -40,7 +40,7 @@ $ docker run -d -p 3210:3210 \
 > - The default mapped port is `3210`. Make sure it is not occupied or manually change the port mapping.
 > - Replace `sk-xxxx` in the above command with your own OpenAI API Key.
 > - The password set in the official Docker image is `lobe66` by default. Replace it with your own password to improve security.
-> - For a complete list of environment variables supported by LobeChat, please refer to the [Environment Variables](https://github.com/lobehub/lobe-chat/wiki/Environment-Variable.zh-CN) section.
+> - For a complete list of environment variables supported by CoolAI, please refer to the [Environment Variables](https://github.com/lobehub/lobe-chat/wiki/Environment-Variable.zh-CN) section.
 
 #### Use a proxy address
 

@@ -1,11 +1,11 @@
-# LobeChat Plugin Development
+# CoolAI Plugin Development
 
 #### TOC
 
 - [Plugin Composition](#plugin-composition)
 - [Custom Plugin Workflow](#custom-plugin-workflow)
   - [**`1`** Create and Start a Plugin Project](#1-create-and-start-a-plugin-project)
-  - [**`2`** Add the Local Plugin in LobeChat Role Settings](#2-add-the-local-plugin-in-lobechat-role-settings)
+  - [**`2`** Add the Local Plugin in CoolAI Role Settings](#2-add-the-local-plugin-in-lobechat-role-settings)
   - [**`3`** Test the Plugin Functionality in a Session](#3-test-the-plugin-functionality-in-a-session)
 - [Local Plugin Development](#local-plugin-development)
   - [Manifest](#manifest)
@@ -18,7 +18,7 @@
 
 ## Plugin Composition
 
-A LobeChat plugin consists of the following components:
+A CoolAI plugin consists of the following components:
 
 1. **Plugin Index**: Used to display basic information about the plugin, including the plugin name, description, author, version, and a link to the plugin manifest. The official plugin index can be found at [lobe-chat-plugins](https://github.com/lobehub/lobe-chat-plugins). To submit a plugin to the official plugin marketplace, you need to submit a PR to this repository.
 2. **Plugin Manifest**: Used to describe the functionality of the plugin, including the server-side description, frontend display information, and version number. For more details about the manifest, please refer to the [manifest][manifest-docs-url].
@@ -31,7 +31,7 @@ A LobeChat plugin consists of the following components:
 
 ## Custom Plugin Workflow
 
-To integrate a plugin into LobeChat, you need to add and use a custom plugin in LobeChat. This section will guide you through the process.
+To integrate a plugin into CoolAI, you need to add and use a custom plugin in CoolAI. This section will guide you through the process.
 
 ### **`1`** Create and Start a Plugin Project
 
@@ -48,9 +48,9 @@ When you see `ready started server on 0.0.0.0:3400, url: http://localhost:3400`,
 
 ![](https://github-production-user-asset-6210df.s3.amazonaws.com/28616219/265259526-9ef25272-4312-429b-93bc-a95515727ed3.png)
 
-### **`2`** Add the Local Plugin in LobeChat Role Settings
+### **`2`** Add the Local Plugin in CoolAI Role Settings
 
-Next, go to LobeChat, create a new assistant, and go to its session settings page:
+Next, go to CoolAI, create a new assistant, and go to its session settings page:
 
 ![](https://github-production-user-asset-6210df.s3.amazonaws.com/28616219/265259643-1a9cc34a-76f3-4ccf-928b-129654670efd.png)
 
@@ -80,7 +80,7 @@ After answering, the assistant will make a plugin call to retrieve recommended c
 
 ![](https://github-production-user-asset-6210df.s3.amazonaws.com/28616219/265260461-c22ae797-2809-464b-96fc-d0c020f4807b.png)
 
-After completing these steps, you have learned the basic process of adding and using a custom plugin in LobeChat.
+After completing these steps, you have learned the basic process of adding and using a custom plugin in CoolAI.
 
 <br/>
 
@@ -133,8 +133,8 @@ In this manifest, the following parts are included:
 
 1. `identifier`: This is the unique identifier of the plugin, used to distinguish different plugins. This field needs to be globally unique.
 2. `api`: This is an array that contains all the API interface information provided by the plugin. Each interface includes the `url`, `name`, `description`, and `parameters` fields, all of which are required. The `description` and `parameters` fields will be sent to GPT as the `functions` parameter of the [Function Call](https://sspai.com/post/81986). The parameters need to comply with the [JSON Schema](https://json-schema.org/) specification. In this example, the API interface is named `recommendClothes`, which recommends clothes based on the user's mood and gender. The parameters of the interface include the user's mood and gender, both of which are required.
-3. `ui`: This field contains information about the plugin's user interface, indicating where LobeChat loads the frontend interface of the plugin from. Since the plugin interface loading in LobeChat is implemented based on `iframe`, you can specify the height and width of the plugin interface as needed.
-4. `gateway`: This field specifies the gateway for LobeChat to query API interfaces. The default plugin gateway in LobeChat is a cloud service, but for custom plugins, the requests need to be sent to the local service. Therefore, by specifying the gateway in the manifest, LobeChat will directly request this address and access the local plugin service. The gateway field does not need to be specified for plugins published online.
+3. `ui`: This field contains information about the plugin's user interface, indicating where CoolAI loads the frontend interface of the plugin from. Since the plugin interface loading in CoolAI is implemented based on `iframe`, you can specify the height and width of the plugin interface as needed.
+4. `gateway`: This field specifies the gateway for CoolAI to query API interfaces. The default plugin gateway in CoolAI is a cloud service, but for custom plugins, the requests need to be sent to the local service. Therefore, by specifying the gateway in the manifest, CoolAI will directly request this address and access the local plugin service. The gateway field does not need to be specified for plugins published online.
 5. `version`: This is the version number of the plugin, which is currently not used.
 
 In actual development, you can modify the plugin's manifest according to your needs to declare the functionality you want to implement. For a complete introduction to each field in the manifest, please refer to: [manifest][manifest-docs-url].
@@ -191,9 +191,9 @@ In this example, `manClothes` and `womanClothes` are hardcoded mock data. In act
 
 #### Gateway
 
-Since the default plugin gateway in LobeChat is a cloud service (\</api/plugins>), which sends requests to the API addresses specified in the manifest to solve the cross-origin issue.
+Since the default plugin gateway in CoolAI is a cloud service (\</api/plugins>), which sends requests to the API addresses specified in the manifest to solve the cross-origin issue.
 
-For custom plugins, the requests need to be sent to the local service. Therefore, by specifying the gateway in the manifest (<http://localhost:3400/api/gateway>), LobeChat will directly request this address. Then you only need to create a gateway implementation at this address.
+For custom plugins, the requests need to be sent to the local service. Therefore, by specifying the gateway in the manifest (<http://localhost:3400/api/gateway>), CoolAI will directly request this address. Then you only need to create a gateway implementation at this address.
 
 ```ts
 import { createLobeChatPluginGateway } from '@lobehub/chat-plugins-gateway';
@@ -205,7 +205,7 @@ export const config = {
 export default async createLobeChatPluginGateway();
 ```
 
-[`@lobehub/chat-plugins-gateway`](https://github.com/lobehub/chat-plugins-gateway) includes the implementation of the plugin gateway in LobeChat, which you can use to create a gateway. This allows LobeChat to access the local plugin service.
+[`@lobehub/chat-plugins-gateway`](https://github.com/lobehub/chat-plugins-gateway) includes the implementation of the plugin gateway in CoolAI, which you can use to create a gateway. This allows CoolAI to access the local plugin service.
 
 ### Plugin UI Interface
 
@@ -219,13 +219,13 @@ If you want to display richer information in plugin messages or include some ric
 
 #### Plugin UI Interface Implementation
 
-LobeChat uses `iframe` + `postMessage` to load and communicate with plugin UI. Therefore, the implementation of the plugin UI is the same as normal web development. You can use any frontend framework and programming language you are familiar with.
+CoolAI uses `iframe` + `postMessage` to load and communicate with plugin UI. Therefore, the implementation of the plugin UI is the same as normal web development. You can use any frontend framework and programming language you are familiar with.
 
 ![](https://github-production-user-asset-6210df.s3.amazonaws.com/28616219/265263653-4ea87abc-249a-49f3-a241-7ed93ddb1ddf.png)
 
 In our template, we use React + Next.js + antd as the frontend framework. You can find the implementation of the user interface in `src/pages/index.tsx`.
 
-Regarding plugin communication, we provide related methods in [`@lobehub/chat-plugin-sdk`](https://github.com/lobehub/chat-plugin-sdk) to simplify the communication between the plugin and LobeChat. You can use the `fetchPluginMessage` method to actively retrieve the data of the current message from LobeChat. For a detailed description of this method, please refer to: [fetchPluginMessage][fetch-plugin-message-url].
+Regarding plugin communication, we provide related methods in [`@lobehub/chat-plugin-sdk`](https://github.com/lobehub/chat-plugin-sdk) to simplify the communication between the plugin and CoolAI. You can use the `fetchPluginMessage` method to actively retrieve the data of the current message from CoolAI. For a detailed description of this method, please refer to: [fetchPluginMessage][fetch-plugin-message-url].
 
 ```tsx
 import { fetchPluginMessage } from '@lobehub/chat-plugin-sdk';
@@ -237,7 +237,7 @@ const Render = memo(() => {
   const [data, setData] = useState<ResponseData>();
 
   useEffect(() => {
-    // Retrieve the current plugin message from LobeChat
+    // Retrieve the current plugin message from CoolAI
     fetchPluginMessage().then((e: ResponseData) => {
       setData(e);
     });

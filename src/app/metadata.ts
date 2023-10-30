@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 import pkg from '../../package.json';
 
-const title = 'LobeChat';
+const title = 'CoolAI';
 const { description, homepage } = pkg;
 const metadata: Metadata = {
   appleWebApp: {
@@ -46,7 +46,7 @@ const metadata: Metadata = {
   ],
   title: {
     default: title,
-    template: '%s · LobeChat',
+    template: '%s · CoolAI',
   },
   twitter: {
     card: 'summary_large_image',

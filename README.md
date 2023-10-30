@@ -8,7 +8,7 @@
 
 <h1>Lobe Chat</h1>
 
-LobeChat is an open-source, extensible ([Function Calling][fc-link]) high-performance chatbot framework. <br/> It supports one-click free deployment of your private ChatGPT/LLM web application.
+CoolAI is an open-source, extensible ([Function Calling][fc-link]) high-performance chatbot framework. <br/> It supports one-click free deployment of your private ChatGPT/LLM web application.
 
 **English** · [简体中文](./README.zh-CN.md) · [Changelog](./CHANGELOG.md) · [Wiki][github-wiki-link] · [Report Bug][github-issues-link] · [Request Feature][github-issues-link]
 
@@ -27,7 +27,7 @@ LobeChat is an open-source, extensible ([Function Calling][fc-link]) high-perfor
 [![][github-issues-shield]][github-issues-link]
 [![][github-license-shield]][github-license-link]
 
-**Share LobeChat Repository**
+**Share CoolAI Repository**
 
 [![][share-x-shield]][share-x-link]
 [![][share-telegram-shield]][share-telegram-link]
@@ -66,7 +66,7 @@ LobeChat is an open-source, extensible ([Function Calling][fc-link]) high-perfor
 
 ## 👋🏻 Getting Started & Join Our Community
 
-Please be aware that LobeChat is currently under active development, and feedback is welcome for any [issues][issues-link] encountered.
+Please be aware that CoolAI is currently under active development, and feedback is welcome for any [issues][issues-link] encountered.
 
 | [![][vercel-shield-badge]][vercel-link]   | No installation or registration necessary! Visit our website to experience it firsthand.                           |
 | :---------------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
@@ -126,13 +126,13 @@ In our agent market. We have accumulated a large number of practical, prompt age
 
 #### `3` Progress Web App
 
-Utilize the Progressive Web Application ([PWA](https://support.google.com/chrome/answer/9658361)) technology to achieve a seamless LobeChat experience on your computer or mobile device.
+Utilize the Progressive Web Application ([PWA](https://support.google.com/chrome/answer/9658361)) technology to achieve a seamless CoolAI experience on your computer or mobile device.
 
 > **Note**\
-> If you are unfamiliar with the installation process of PWA, you can add LobeChat as your desktop application (also applicable to mobile devices) by following these steps:
+> If you are unfamiliar with the installation process of PWA, you can add CoolAI as your desktop application (also applicable to mobile devices) by following these steps:
 >
 > - Launch the Chrome or Edge browser on your computer.
-> - Visit the LobeChat webpage.
+> - Visit the CoolAI webpage.
 > - In the upper right corner of the address bar, click on the <kbd>Install</kbd> icon.
 > - Follow the instructions on the screen to complete the PWA Installation.
 
@@ -142,7 +142,7 @@ Utilize the Progressive Web Application ([PWA](https://support.google.com/chrome
 
 #### `4` Theme Mode Selection
 
-LobeChat offers two unique theme modes - Light Mode and Dark Mode, as well as rich color customization options to meet your personalized needs. By default, our themes will intelligently switch based on your system settings, but if you prefer manual control, you can easily switch in the settings. <br/>
+CoolAI offers two unique theme modes - Light Mode and Dark Mode, as well as rich color customization options to meet your personalized needs. By default, our themes will intelligently switch based on your system settings, but if you prefer manual control, you can easily switch in the settings. <br/>
 
 ![](https://gw.alipayobjects.com/zos/kitchen/R441AuFS4W/mobile.webp)
 
@@ -176,7 +176,7 @@ We have carried out a series of optimization designs for mobile devices to enhan
 
 ## 🛳 Self Hosting
 
-LobeChat provides Self-Hosted Version with Vercel and [Docker Image][docker-release-link]. This allows you to deploy your own chatbot within a few minutes without any prior knowledge.
+CoolAI provides Self-Hosted Version with Vercel and [Docker Image][docker-release-link]. This allows you to deploy your own chatbot within a few minutes without any prior knowledge.
 
 ### `A` Deploying with Vercel
 
@@ -198,7 +198,7 @@ If you want to deploy this service yourself on Vercel, you can follow these step
 If you have deployed your own project following the one-click deployment steps in the README, you might encounter constant prompts indicating "updates available." This is because Vercel defaults to creating a new project instead of forking this one, resulting in an inability to detect updates accurately.
 
 > **Important**\
-> We suggest you redeploy using the following steps, [📘 Maintaining Updates with LobeChat Self-Deployment](https://github.com/lobehub/lobe-chat/wiki/Upstream-Sync).
+> We suggest you redeploy using the following steps, [📘 Maintaining Updates with CoolAI Self-Deployment](https://github.com/lobehub/lobe-chat/wiki/Upstream-Sync).
 
 <br/>
 
@@ -208,7 +208,7 @@ If you have deployed your own project following the one-click deployment steps i
 [![][docker-size-shield]][docker-size-link]
 [![][docker-pulls-shield]][docker-pulls-link]
 
-We provide a Docker image for deploying the LobeChat service on your own private device. Use the following command to start the LobeChat service:
+We provide a Docker image for deploying the CoolAI service on your own private device. Use the following command to start the CoolAI service:
 
 ```fish
 $ docker run -d -p 3210:3210 \
@@ -268,12 +268,12 @@ This project provides some additional configuration items set with environment v
 
 ## 🧩 Plugins
 
-Plugins provide a means to extend the [Function Calling][fc-link] capabilities of LobeChat. They can be used to introduce new function calls and even new ways to render message results. If you are interested in plugin development, please refer to our [📘 Plugin Development Guide](https://github.com/lobehub/lobe-chat/wiki/Plugin-Development) in the Wiki.
+Plugins provide a means to extend the [Function Calling][fc-link] capabilities of CoolAI. They can be used to introduce new function calls and even new ways to render message results. If you are interested in plugin development, please refer to our [📘 Plugin Development Guide](https://github.com/lobehub/lobe-chat/wiki/Plugin-Development) in the Wiki.
 
-- [lobe-chat-plugins][lobe-chat-plugins]: This is the plugin index for LobeChat. It accesses index.json from this repository to display a list of available plugins for LobeChat to the user.
-- [chat-plugin-template][chat-plugin-template]: This is the plugin template for LobeChat plugin development.
-- [@lobehub/chat-plugin-sdk][chat-plugin-sdk]: The LobeChat Plugin SDK assists you in creating exceptional chat plugins for Lobe Chat.
-- [@lobehub/chat-plugins-gateway][chat-plugins-gateway]: The LobeChat Plugins Gateway is a backend service that provides a gateway for LobeChat plugins. We deploy this service using Vercel. The primary API POST /api/v1/runner is deployed as an Edge Function.
+- [lobe-chat-plugins][lobe-chat-plugins]: This is the plugin index for CoolAI. It accesses index.json from this repository to display a list of available plugins for CoolAI to the user.
+- [chat-plugin-template][chat-plugin-template]: This is the plugin template for CoolAI plugin development.
+- [@lobehub/chat-plugin-sdk][chat-plugin-sdk]: The CoolAI Plugin SDK assists you in creating exceptional chat plugins for Lobe Chat.
+- [@lobehub/chat-plugins-gateway][chat-plugins-gateway]: The CoolAI Plugins Gateway is a backend service that provides a gateway for CoolAI plugins. We deploy this service using Vercel. The primary API POST /api/v1/runner is deployed as an Edge Function.
 
 > **Note**\
 > The plugin system is currently undergoing major development. You can learn more in the following issues:

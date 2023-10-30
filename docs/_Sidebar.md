@@ -4,7 +4,7 @@
 
 - [TOC](Home) | [目录](Home)
 
-#### 🤯 LobeChat
+#### 🤯 CoolAI
 
 - [Environment Variables](Environment-Variable) | [中文](Environment-Variable.zh-CN)
 - [Upstream Sync](Upstream-Sync) | [中文](Upstream-Sync.zh-CN)

@@ -15,7 +15,7 @@ export default memo(() => (
   <ResponsiveIndex Mobile={Mobile}>
     <Layout>
       <Showcase />
-      <Footer />
+      {/* <Footer /> */}
     </Layout>
   </ResponsiveIndex>
 ));

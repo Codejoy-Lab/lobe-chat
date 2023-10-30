@@ -1,6 +1,8 @@
-import { Logo, MobileNavBar } from '@lobehub/ui';
+import { MobileNavBar } from '@lobehub/ui';
 import { memo } from 'react';
 
-const Header = memo(() => <MobileNavBar center={<Logo type={'text'} />} />);
+import Logo from '../../../../components/Icons/logo';
+
+const Header = memo(() => <MobileNavBar center={<Logo />} />);
 
 export default Header;

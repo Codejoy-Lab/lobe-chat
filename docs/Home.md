@@ -6,16 +6,16 @@
 
 <h1>Lobe Chat Wiki</h1>
 
-LobeChat is a open-source, extensible ([Function Calling][fc-url]), high-performance chatbot framework. <br/> It supports one-click free deployment of your private ChatGPT/LLM web application.
+CoolAI is a open-source, extensible ([Function Calling][fc-url]), high-performance chatbot framework. <br/> It supports one-click free deployment of your private ChatGPT/LLM web application.
 
 </div>
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-### 🤯 LobeChat
+### 🤯 CoolAI
 
 - [Environment Variables](Environment-Variable) | [环境变量](Environment-Variable.zh-CN)
-- [Maintaining Updates with LobeChat Self-Deployment](Upstream-Sync) | [自部署保持更新](Upstream-Sync.zh-CN)
+- [Maintaining Updates with CoolAI Self-Deployment](Upstream-Sync) | [自部署保持更新](Upstream-Sync.zh-CN)
 - [Deploying with Azure OpenAI](Deploy-with-Azure-OpenAI) | [使用 Azure OpenAI 部署](Deploy-with-Azure-OpenAI.zh-CN)
 - [Docker Deployment Guide](Docker-Deployment) | [Docker 部署指引](Docker-Deployment.zh-CN)
 - [Lighthouse Report](Lighthouse) | [性能测试](Lighthouse.zh-CN)

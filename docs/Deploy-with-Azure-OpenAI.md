@@ -1,6 +1,6 @@
 # Deploying with Azure OpenAI
 
-LobeChat supports using [Azure OpenAI][azure-openai-url] as the model service provider for OpenAI. This document will guide you through the configuration of Azure OpenAI.
+CoolAI supports using [Azure OpenAI][azure-openai-url] as the model service provider for OpenAI. This document will guide you through the configuration of Azure OpenAI.
 
 #### TOC
 
@@ -10,10 +10,10 @@ LobeChat supports using [Azure OpenAI][azure-openai-url] as the model service pr
 
 ## Usage Limitations
 
-Considering development costs ([#178][rfc]), the current version of LobeChat does not fully conform to Azure OpenAI's implementation model. Instead, it adopts a solution based on `openai` that is compatible with Azure OpenAI. This brings about the following limitations:
+Considering development costs ([#178][rfc]), the current version of CoolAI does not fully conform to Azure OpenAI's implementation model. Instead, it adopts a solution based on `openai` that is compatible with Azure OpenAI. This brings about the following limitations:
 
 - You can only choose one between OpenAI and Azure OpenAI. Once you enable Azure OpenAI, you will not be able to use OpenAI as the model service provider.
-- LobeChat requires deployment names to be the same as the model names in order to function properly. For example, the deployment name for the `gpt-35-turbo` model must be `gpt-35-turbo`, otherwise LobeChat will not be able to match the model correctly.
+- CoolAI requires deployment names to be the same as the model names in order to function properly. For example, the deployment name for the `gpt-35-turbo` model must be `gpt-35-turbo`, otherwise CoolAI will not be able to match the model correctly.
   ![](https://github-production-user-asset-6210df.s3.amazonaws.com/28616219/267082091-d89d53d3-1c8c-40ca-ba15-0a9af2a79264.png)
 - Due to the complexity of integrating the Azure OpenAI SDK, it is currently impossible to query the model list of configured resources.
 

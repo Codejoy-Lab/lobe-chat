@@ -4,7 +4,7 @@
 [![][docker-size-shield]][docker-size-link]
 [![][docker-pulls-shield]][docker-pulls-link]
 
-我们提供了 [Docker 镜像][docker-release-link]，供你在自己的私有设备上部署 LobeChat 服务
+我们提供了 [Docker 镜像][docker-release-link]，供你在自己的私有设备上部署 CoolAI 服务
 
 ## 安装 Docker 容器环境
 
@@ -26,7 +26,7 @@ $ yum install docker
 
 ### `A` 指令部署（推荐）
 
-使用以下命令即可使用一键启动 LobeChat 服务：
+使用以下命令即可使用一键启动 CoolAI 服务：
 
 ```fish
 $ docker run -d -p 3210:3210 \
@@ -40,7 +40,7 @@ $ docker run -d -p 3210:3210 \
 > - 默认映射端口为 `3210`, 请确保未被占用或手动更改端口映射
 > - 使用你的 OpenAI API Key 替换上述命令中的 `sk-xxxx`
 > - 官方 Docker 镜像中设定的密码默认为 `lobe66`，请将其替换为自己的密码以提升安全性
-> - LobeChat 支持的完整环境变量列表请参考 [环境变量](https://github.com/lobehub/lobe-chat/wiki/Environment-Variable.zh-CN) 部分
+> - CoolAI 支持的完整环境变量列表请参考 [环境变量](https://github.com/lobehub/lobe-chat/wiki/Environment-Variable.zh-CN) 部分
 
 #### 使用代理地址
 

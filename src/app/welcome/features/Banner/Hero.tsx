@@ -23,7 +23,7 @@ const Hero = memo<{ mobile?: boolean; width: number }>(({ width, mobile }) => {
         <LogoThree size={size.logo} />
       </div>
       <div className={styles.title} style={{ fontSize: size.title }}>
-        <strong style={mobile ? { fontSize: '1.2em' } : {}}>LobeChat</strong>
+        <strong style={mobile ? { fontSize: '1.2em' } : {}}>CoolAI</strong>
         {mobile ? <br /> : ' '}
         {t('slogan.title')}
       </div>
