@@ -1,11 +1,12 @@
 import { useTheme } from 'antd-style';
+import { memo } from 'react';
 
-const Svg = () => {
+const Svg = memo<{ width?: string }>(({ width = '377' }) => {
   const theme = useTheme();
-  
+
   return (
     <svg
-      width="377.8"
+      width={width}
       height="71.401"
       viewBox="0 0 377.8 71.401"
       xmlns="http://www.w3.org/2000/svg"
@@ -26,6 +27,6 @@ const Svg = () => {
       </g>
     </svg>
   );
-};
+});
 
 export default Svg;

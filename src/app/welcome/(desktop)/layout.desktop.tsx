@@ -19,7 +19,7 @@ const Desktop = memo<PropsWithChildren>(({ children }) => {
         horizontal
         style={{ position: 'relative' }}
       >
-        <Logo />
+        {/* <Logo /> */}
         <Flexbox className={styles.view} flex={1}>
           {children}
         </Flexbox>

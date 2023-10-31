@@ -180,44 +180,44 @@ const MarketList = memo(() => {
         items={[
           {
             children: isEmpty ? loadingList : [...deprecatedList, ...customList, ...list],
-            extra: (
-              <Space.Compact style={{ width: 'auto' }}>
-                <Button
-                  icon={<Icon icon={LucideBlocks} />}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setModal(true);
-                  }}
-                  size={'small'}
-                >
-                  {t('settingPlugin.addTooltip')}
-                </Button>
-                {hasDeprecated ? (
-                  <Tooltip title={t('settingPlugin.clearDeprecated')}>
-                    <Button
-                      icon={<Icon icon={LucideTrash2} />}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        for (const i of deprecatedList) {
-                          togglePlugin(i.tag as string, false);
-                        }
-                      }}
-                      size={'small'}
-                    />
-                  </Tooltip>
-                ) : null}
-                <Tooltip title={t('settingPlugin.settings')}>
-                  <Button
-                    icon={<Icon icon={LucideSettings} />}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setShowSettings(true);
-                    }}
-                    size={'small'}
-                  />
-                </Tooltip>
-              </Space.Compact>
-            ),
+            // extra: (
+            //   <Space.Compact style={{ width: 'auto' }}>
+            //     <Button
+            //       icon={<Icon icon={LucideBlocks} />}
+            //       onClick={(e) => {
+            //         e.stopPropagation();
+            //         setModal(true);
+            //       }}
+            //       size={'small'}
+            //     >
+            //       {t('settingPlugin.addTooltip')}
+            //     </Button>
+            //     {hasDeprecated ? (
+            //       <Tooltip title={t('settingPlugin.clearDeprecated')}>
+            //         <Button
+            //           icon={<Icon icon={LucideTrash2} />}
+            //           onClick={(e) => {
+            //             e.stopPropagation();
+            //             for (const i of deprecatedList) {
+            //               togglePlugin(i.tag as string, false);
+            //             }
+            //           }}
+            //           size={'small'}
+            //         />
+            //       </Tooltip>
+            //     ) : null}
+            //     <Tooltip title={t('settingPlugin.settings')}>
+            //       <Button
+            //         icon={<Icon icon={LucideSettings} />}
+            //         onClick={(e) => {
+            //           e.stopPropagation();
+            //           setShowSettings(true);
+            //         }}
+            //         size={'small'}
+            //       />
+            //     </Tooltip>
+            //   </Space.Compact>
+            // ),
             icon: LucideStore,
             title: t('settingPlugin.title'),
           },

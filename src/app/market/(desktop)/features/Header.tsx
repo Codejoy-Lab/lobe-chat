@@ -20,10 +20,10 @@ const Header = memo(() => {
     <ChatHeader
       left={
         <Link aria-label={'home'} href={'/'}>
-          <Logo />
+          <Logo width='277'/>
         </Link>
       }
-      right={<ShareAgentButton />}
+      // right={<ShareAgentButton />}
     />
   );
 });
