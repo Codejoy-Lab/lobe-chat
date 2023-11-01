@@ -31,7 +31,7 @@ const SideBar = memo(() => {
             <Logo width='277'/>
           </div>
         </Flexbox>
-        <UpgradeAlert />
+        {/* <UpgradeAlert /> */}
         <Flexbox gap={2} style={{ paddingInline: 6 }}>
           <List />
         </Flexbox>
