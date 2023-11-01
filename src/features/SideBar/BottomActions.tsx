@@ -115,7 +115,8 @@ const BottomActions = memo<BottomActionProps>(({ tab, setTab }) => {
       key: 'setting',
       label: (
         <Flexbox align={'center'} distribution={'space-between'} gap={8} horizontal>
-          {t('setting')} {hasNewVersion && <Badge count={t('upgradeVersion.hasNew')} />}
+          {t('setting')} 
+          {/* {hasNewVersion && <Badge count={t('upgradeVersion.hasNew')} />} */}
         </Flexbox>
       ),
       onClick: () => {
@@ -144,7 +145,7 @@ const BottomActions = memo<BottomActionProps>(({ tab, setTab }) => {
         title={'GitHub'}
       /> */}
       <Dropdown arrow={false} menu={{ items }} trigger={['click']}>
-        {hasNewVersion ? (
+        {/* {hasNewVersion ? (
           <Flexbox>
             <ConfigProvider theme={{ components: { Badge: { dotSize: 8 } } }}>
               <Badge dot offset={[-4, 4]}>
@@ -154,7 +155,8 @@ const BottomActions = memo<BottomActionProps>(({ tab, setTab }) => {
           </Flexbox>
         ) : (
           <ActionIcon active={tab === SidebarTabKey.Setting} icon={Settings2} />
-        )}
+        )} */}
+        <ActionIcon active={tab === SidebarTabKey.Setting} icon={Settings2} />
       </Dropdown>
     </>
   );
