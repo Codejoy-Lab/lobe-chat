@@ -60,7 +60,7 @@ const Header = memo(() => {
               desc={displayDesc}
               tag={
                 <>
-                  <Tag icon={<SiOpenai size={'1em'} />}>{model}</Tag>
+                  {/* <Tag icon={<SiOpenai size={'1em'} />}>{model}</Tag> */}
                   {plugins?.length > 0 && <PluginTag plugins={plugins} />}
                 </>
               }
