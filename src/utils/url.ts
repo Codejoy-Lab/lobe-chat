@@ -31,5 +31,6 @@ export const getURL = () => {
   url = url.includes('http') ? url : `https://${url}`;
   // Make sure to including trailing `/`.
   url = url.at(-1) === '/' ? url : `${url}/`;
+  console.log(url)
   return url;
 };
