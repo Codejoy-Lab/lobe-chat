@@ -8,7 +8,7 @@
 
 <h1>Lobe Chat</h1>
 
-CoolAI 是一个开源的、可扩展的（[Function Calling][fc-link]）高性能聊天机器人框架。<br/> 它支持一键免费部署私人 ChatGPT/LLM 网页应用程序。
+CoolAI是一个开源的、可扩展的（[Function Calling][fc-link]）高性能聊天机器人框架。<br/> 它支持一键免费部署私人 ChatGPT/LLM 网页应用程序。
 
 [English](./README.md) · **简体中文** · [更新日志](./CHANGELOG.md) · [文档][github-wiki-link] · [报告问题][github-issues-link] · [请求功能][github-issues-link]
 
