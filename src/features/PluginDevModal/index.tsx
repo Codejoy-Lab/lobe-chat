@@ -1,5 +1,5 @@
-import { Modal } from '@lobehub/ui';
-import { Alert, App, Button, Form, Popconfirm } from 'antd';
+import { Alert, Modal } from '@lobehub/ui';
+import { App, Button, Form, Popconfirm } from 'antd';
 import { useResponsive } from 'antd-style';
 import { memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -96,7 +96,10 @@ const DevModal = memo<DevModalProps>(
           cancelText={t('cancel', { ns: 'common' })}
           footer={footer}
           okText={t('dev.save')}
-          onCancel={() => onOpenChange(false)}
+          onCancel={(e) => {
+            e.stopPropagation();
+            onOpenChange(false);
+          }}
           onOk={() => form.submit()}
           open={open}
           title={t('dev.title')}

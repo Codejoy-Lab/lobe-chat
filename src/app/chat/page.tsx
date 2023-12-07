@@ -5,6 +5,7 @@ import { getSession, getUserProfile } from '@/utils/supabase';
 
 import DesktopPage from './(desktop)';
 import MobilePage from './(mobile)';
+import Migration from './features/Migration';
 
 async function Page() {
   const [session, _profile] = await Promise.all([
@@ -23,7 +24,11 @@ async function Page() {
 
   const Page = mobile ? MobilePage : DesktopPage;
 
-  return <Page />;
-}
+  return (
+    <Migration>
+      <Page />
+    </Migration>
+  );
+};
 
 export default Page;
